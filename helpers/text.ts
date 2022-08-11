@@ -4,7 +4,9 @@ const [, ...fonts] = await Promise.all([
   initialize(
     fetch("https://esm.sh/svg2png-wasm@1.3.4/svg2png_wasm_bg.wasm"),
   ),
-  Deno.readFile("./fonts/Noto_Sans_JP/NotoSansJP-Regular.otf"),
+  Deno.readFile(
+    new URL("./fonts/Noto_Sans_JP/NotoSansJP-Regular.otf", import.meta.url),
+  ),
 ]);
 
 export const getTextSVG = (str: string, color: string) =>
