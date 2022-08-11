@@ -7,15 +7,15 @@ const [, ...fonts] = await Promise.all([
   Deno.readFile("./fonts/Noto_Sans_JP/NotoSansJP-Regular.otf"),
 ]);
 
-export const getTextSVG = (str: string) =>
-  `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" style="dominant-baseline:central;text-anchor:middle;font-size:90px;" fill="red">${str}</text></svg>`;
-export const svgToPng = (svg: string) =>
+export const getTextSVG = (str: string, color: string) =>
+  `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" dy="36%" style="text-anchor:middle;font-size:90px;" fill="${color}">${str}</text></svg>`;
+export const svgToPng = (svg: string, backgroundColor?: string) =>
   svg2png(
     svg,
     {
       // width: 400,
       // height: 400,
-      // backgroundColor: "white",
+      backgroundColor,
       fonts,
       defaultFontFamily: {
         sansSerifFamily: "Noto Sans JP",
