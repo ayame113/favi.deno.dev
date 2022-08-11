@@ -13,8 +13,8 @@ export const svgToPng = (svg: string, backgroundColor?: string) =>
   svg2png(
     svg,
     {
-      // width: 400,
-      // height: 400,
+      width: 512,
+      height: 512,
       backgroundColor,
       fonts,
       defaultFontFamily: {
