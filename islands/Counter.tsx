@@ -1,20 +1,19 @@
+/** @jsxFrag Fragment */
 /** @jsx h */
-import { h } from "preact";
+import { Fragment, h } from "preact";
 import { useState } from "preact/hooks";
 
-import { Button } from "../components/Button.tsx";
+import { Tab } from "../components/Tab.tsx";
 
-interface CounterProps {
-  start: number;
-}
-
-export default function Counter(props: CounterProps) {
-  const [count, setCount] = useState(props.start);
+export default function Counter() {
   return (
-    <div>
-      <p>{count}</p>
-      <Button onClick={() => setCount(count - 1)}>-1</Button>
-      <Button onClick={() => setCount(count + 1)}>+1</Button>
-    </div>
+    <>
+      <Tab>
+        <div title="タブ1">これはタブ1の内容です</div>
+        <div title="タブ2">これはタブ2の内容です</div>
+        <div title="タブ3">これはタブ3の内容です</div>
+        <div title="タブ4">これはタブ4の内容です</div>
+      </Tab>
+    </>
   );
 }
