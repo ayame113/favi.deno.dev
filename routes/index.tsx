@@ -3,7 +3,7 @@
 import { Fragment, h } from "preact";
 import Counter from "../islands/Counter.tsx";
 import { tw } from "@twind";
-import { Head } from "$fresh/runtime.ts";
+import { asset, Head } from "$fresh/runtime.ts";
 
 import {
   DESCRIPTION,
@@ -23,13 +23,15 @@ export default function Home() {
         <meta property="og:description" content={DESCRIPTION} />
         <meta property="og:url" content="https://favi.deno.dev" />
         <meta property="og:image" content={FAVICON_URL} />
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@_ayame113_" />
         <link rel="icon" type="image/png" href={FAVICON_URL} />
         <link rel="apple-touch-icon" href={FAVICON_URL} />
         <link rel="manifest" href="/manifest.json" />
         <script type="module">
           if ('serviceWorker' in navigator)
-          navigator.serviceWorker.register('service_worker.js')
+          navigator.serviceWorker.register('{asset("service_worker.js")}')
         </script>
       </Head>
       <header>fast favicon</header>
