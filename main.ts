@@ -10,6 +10,8 @@ import manifest from "./fresh.gen.ts";
 import { config, setup } from "@twind";
 import { virtualSheet } from "twind/sheets";
 
+console.log(__FRSH_BUILD_ID);
+
 const sheet = virtualSheet();
 sheet.reset();
 setup({ ...config, sheet });

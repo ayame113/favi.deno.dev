@@ -6,6 +6,7 @@ import { getEmojiSVG, isEmoji } from "../utils/twemoji.ts";
 import { getTextSVG, svgToPng } from "../utils/text.ts";
 
 const pngContentType = contentType(".png");
+const cache: Record<string, Uint8Array | undefined> = {};
 
 export const config: RouteConfig = {
   routeOverride: "/:text.png",
@@ -17,8 +18,14 @@ export const handler: Handlers = {
     const [str] = decodeURI(text);
     const backgroundColor = searchParams.get("backgroundColor") || undefined;
     const color = searchParams.get("color") ?? "black";
-    const svg = isEmoji(str) ? await getEmojiSVG(str) : getTextSVG(str, color);
-    return new Response(await svgToPng(svg, backgroundColor), {
+    const cacheKey = `${str}_${color}_${backgroundColor}`;
+    if (!cache[cacheKey]) {
+      const svg = isEmoji(str)
+        ? await getEmojiSVG(str)
+        : getTextSVG(str, color);
+      cache[cacheKey] = await svgToPng(svg, backgroundColor);
+    }
+    return new Response(cache[cacheKey], {
       headers: {
         "Content-Type": pngContentType,
       },

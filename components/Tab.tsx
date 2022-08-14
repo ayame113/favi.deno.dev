@@ -17,16 +17,20 @@ export function Tab(props: TabProps) {
   const children = Array.isArray(props.children)
     ? props.children
     : [props.children];
+
+  const { backgroundColor = "#333333" } = props;
   return (
     <div>
-      <div class={tw`flex gap-0.5 text-[${props.color ?? "white"}]`}>
+      <div
+        class={tw`flex flex-nowrap gap-x-0.5 text-[${
+          props.color ?? "white"
+        }] border-b-4 border-[${backgroundColor}]`}
+      >
         {children.map((v, i) => (
           <button
             onClick={() => setTab(i)}
             disabled={i === tab}
-            class={tw`flex-grow rounded-t-lg p-1 transition-opacity bg-[${
-              props.backgroundColor ?? "dimgray"
-            }] hover:opacity-75 disabled:opacity-75`}
+            class={tw`flex-grow rounded-t-lg p-1 transition-opacity bg-[${backgroundColor}] opacity-80 hover:opacity-100 disabled:opacity-100`}
           >
             {v.props.title ?? i}
           </button>

@@ -6,7 +6,7 @@ export const handler: Handlers = {
   async GET() {
     return new Response(
       (await Deno.open(
-        new URL(import.meta.resolve("../utils/service_worker.js")),
+        new URL(import.meta.resolve("../static/service_worker.js")),
       )).readable,
       {
         headers: {
