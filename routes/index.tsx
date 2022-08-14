@@ -15,9 +15,9 @@ import {
 } from "../utils/metadata.ts";
 
 const mainDivClass =
-  apply`mt-4 bg-gray-50 rounded-lg p-2 shadow-md max-w-4xl mx-auto`;
+  apply`mt-4 bg-white rounded-lg p-2 shadow-md max-w-4xl mx-auto`;
 const h2Style = apply`text-3xl text-center border-b-2 p-1`;
-const h3Style = apply`text-lg my-3`;
+const h3Style = apply`text-lg mt-4 mb-3 border-b-2 px-2 py-1`;
 const ulStyle = apply`list-disc p-2 pl-8`;
 
 export default function Home() {
@@ -82,6 +82,29 @@ export default function Home() {
               notation for{" "}
               <Link href="https://twemoji.twitter.com/">twemoji</Link>, the
               provider of the emoji image.
+            </li>
+          </ul>
+          <h3 class={tw(h3Style)}>Dependencies</h3>
+          <ul class={tw(ulStyle)}>
+            <li>
+              This site is hosted at{" "}
+              <Link href="https://deno.com/deploy">deno deploy</Link>.
+            </li>
+            <li>
+              Emoji images are taken from{" "}
+              <Link href="https://twemoji.maxcdn.com/" />.
+            </li>
+            <li>
+              <Link href="https://github.com/ssssota/svg2png-wasm">
+                ssssota/svg2png-wasm
+              </Link>{" "}
+              is used to convert from svg to png.
+            </li>
+            <li>
+              <Link href="https://github.com/missive/emoji-mart">
+                missive/emoji-mart
+              </Link>{" "}
+              is used for the emoji picker.
             </li>
           </ul>
         </div>

@@ -1,4 +1,3 @@
-/** @jsxFrag Fragment */
 /** @jsx h */
 import { h } from "preact";
 import { useEffect, useRef } from "preact/hooks";
@@ -16,7 +15,12 @@ export function EmojiPicker({ onEmojiSelect, ...props }: EmojiPickerProps) {
   const pickerWrapper = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (pickerWrapper.current) {
-      const picker = new Picker({ onEmojiSelect });
+      const picker = new Picker({
+        onEmojiSelect,
+        emojiSize: 20,
+        previewPosition: "none",
+        set: "twitter",
+      });
       picker.style.margin = "auto";
       pickerWrapper.current.appendChild(picker);
     }
