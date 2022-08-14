@@ -13,9 +13,11 @@ const isDevelop = location.hostname === "localhost";
 
 sw.addEventListener("install", (e) => {
   e.waitUntil((async () => {
-    console.log(
-      `🍌[[[install]]] (isDevelop: ${isDevelop}, version: "${location.search}")`,
-    );
+    if (isDevelop) {
+      console.log(
+        `🍌[[[install]]] (isDevelop: ${isDevelop}, version: "${location.search}")`,
+      );
+    }
     await sw.skipWaiting();
     const cache = await cachePromise;
     await cache.addAll(FOURCE_CACHE);
@@ -23,7 +25,9 @@ sw.addEventListener("install", (e) => {
 });
 
 sw.addEventListener("activate", (e) => {
-  console.log(`🍌[[[activate]]]`);
+  if (isDevelop) {
+    console.log(`🍌[[[activate]]]`);
+  }
   e.waitUntil((async () => {
     await sw.clients.claim();
     const keys = await caches.keys();

@@ -3,9 +3,6 @@ import { h } from "preact";
 import { useState } from "preact/hooks";
 import { tw } from "@twind";
 
-const colorSelectorStyle =
-  "cursor-pointer border-2 px-2 py-1 my-2 mx-auto w-full block rounded-xl focus:outline-none focus-within:border-blue-500 transition-colors";
-
 export interface Color {
   enable: boolean;
   value: string;

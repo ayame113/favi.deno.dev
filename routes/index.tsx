@@ -1,4 +1,3 @@
-/** @jsxFrag Fragment */
 /** @jsx h */
 import { h } from "preact";
 import { apply, tw } from "@twind";
@@ -89,6 +88,10 @@ export default function Home() {
             <li>
               This site is hosted at{" "}
               <Link href="https://deno.com/deploy">deno deploy</Link>.
+            </li>
+            <li>
+              Using <Link href="https://fresh.deno.dev/">fresh</Link>{" "}
+              as framework.
             </li>
             <li>
               Emoji images are taken from{" "}
