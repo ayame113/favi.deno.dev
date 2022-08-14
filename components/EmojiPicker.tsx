@@ -14,16 +14,18 @@ interface EmojiPickerProps extends h.JSX.HTMLAttributes<HTMLDivElement> {
 export function EmojiPicker({ onEmojiSelect, ...props }: EmojiPickerProps) {
   const pickerWrapper = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (pickerWrapper.current) {
-      const picker = new Picker({
-        onEmojiSelect,
-        emojiSize: 20,
-        previewPosition: "none",
-        set: "twitter",
-      });
-      picker.style.margin = "auto";
-      pickerWrapper.current.appendChild(picker);
-    }
+    setTimeout(() => {
+      if (pickerWrapper.current) {
+        const picker = new Picker({
+          onEmojiSelect,
+          emojiSize: 20,
+          previewPosition: "none",
+          set: "twitter",
+        });
+        picker.style.margin = "auto";
+        pickerWrapper.current.appendChild(picker);
+      }
+    }, 1000);
   }, []);
   return <div ref={pickerWrapper} {...props} />;
 }
