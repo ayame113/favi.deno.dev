@@ -14,7 +14,7 @@ interface EmojiPickerProps extends h.JSX.HTMLAttributes<HTMLDivElement> {
 export function EmojiPicker({ onEmojiSelect, ...props }: EmojiPickerProps) {
   const pickerWrapper = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    setTimeout(() => {
+    const render = () => {
       if (pickerWrapper.current) {
         const picker = new Picker({
           onEmojiSelect,
@@ -25,7 +25,12 @@ export function EmojiPicker({ onEmojiSelect, ...props }: EmojiPickerProps) {
         picker.style.margin = "auto";
         pickerWrapper.current.appendChild(picker);
       }
-    }, 2000);
+    };
+    if (requestIdleCallback) {
+      requestIdleCallback(render);
+    } else {
+      setTimeout(render, 2000);
+    }
   }, []);
   return <div ref={pickerWrapper} {...props} />;
 }
