@@ -25,7 +25,7 @@ export function EmojiPicker({ onEmojiSelect, ...props }: EmojiPickerProps) {
         picker.style.margin = "auto";
         pickerWrapper.current.appendChild(picker);
       }
-    }, 1000);
+    }, 2000);
   }, []);
   return <div ref={pickerWrapper} {...props} />;
 }
