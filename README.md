@@ -2,6 +2,8 @@
 
 Source code for [favi.deno.dev](https://favi.deno.dev).
 
+API to provide images for favicons using emojis and characters.
+
 ### develop
 
 ```shell
@@ -9,6 +11,12 @@ Source code for [favi.deno.dev](https://favi.deno.dev).
 ```
 
 ### How it works
+
+```mermaid
+graph LR
+    A[Your Website] --> B[favi.deno.dev <br><br> Convert SVG to PNG] --> C["twemoji.maxcdn.com"]
+    C --Get emoji SVG--> B --provide PNG favicon--> A
+```
 
 - When accessed for the first time, a response is returned from CDN Edge (deno
   deploy). ─ about 300ms
