@@ -1,4 +1,3 @@
-/** @jsxFrag Fragment */
 /** @jsx h */
 import { h } from "preact";
 import { useEffect, useRef } from "preact/hooks";
@@ -15,10 +14,22 @@ interface EmojiPickerProps extends h.JSX.HTMLAttributes<HTMLDivElement> {
 export function EmojiPicker({ onEmojiSelect, ...props }: EmojiPickerProps) {
   const pickerWrapper = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (pickerWrapper.current) {
-      const picker = new Picker({ onEmojiSelect });
-      picker.style.margin = "auto";
-      pickerWrapper.current.appendChild(picker);
+    const render = () => {
+      if (pickerWrapper.current) {
+        const picker = new Picker({
+          onEmojiSelect,
+          emojiSize: 20,
+          previewPosition: "none",
+          set: "twitter",
+        });
+        picker.style.margin = "auto";
+        pickerWrapper.current.appendChild(picker);
+      }
+    };
+    if (requestIdleCallback) {
+      requestIdleCallback(render);
+    } else {
+      setTimeout(render, 2000);
     }
   }, []);
   return <div ref={pickerWrapper} {...props} />;

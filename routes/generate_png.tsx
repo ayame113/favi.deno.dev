@@ -28,6 +28,7 @@ export const handler: Handlers = {
     return new Response(cache[cacheKey], {
       headers: {
         "Content-Type": pngContentType,
+        "cache-control": "public, max-age=31536000, immutable",
       },
     });
   },

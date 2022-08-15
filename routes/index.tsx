@@ -1,4 +1,3 @@
-/** @jsxFrag Fragment */
 /** @jsx h */
 import { h } from "preact";
 import { apply, tw } from "@twind";
@@ -15,10 +14,11 @@ import {
 } from "../utils/metadata.ts";
 
 const mainDivClass =
-  apply`mt-4 bg-gray-50 rounded-lg p-2 shadow-md max-w-4xl mx-auto`;
+  apply`mt-4 bg-white rounded-lg p-2 shadow-md max-w-4xl mx-auto`;
 const h2Style = apply`text-3xl text-center border-b-2 p-1`;
-const h3Style = apply`text-lg my-3`;
+const h3Style = apply`text-lg mt-4 mb-3 border-b-2 px-2 py-1`;
 const ulStyle = apply`list-disc p-2 pl-8`;
+const pStyle = "p-2";
 
 export default function Home() {
   return (
@@ -55,7 +55,7 @@ export default function Home() {
             {" fast favicon "}
             <img src="/🍒.png" alt="favicon" class={tw`inline w-8 h-8`} />
           </h2>
-          <p class={tw`p-2`}>
+          <p class={tw(pStyle)}>
             Don't want to worry about setting favicons? Tired of favicon
             generation and hosting? Wishes can come true.
           </p>
@@ -84,6 +84,45 @@ export default function Home() {
               provider of the emoji image.
             </li>
           </ul>
+          <h3 class={tw(h3Style)}>Dependencies</h3>
+          <ul class={tw(ulStyle)}>
+            <li>
+              This site is hosted at{" "}
+              <Link href="https://deno.com/deploy">deno deploy</Link>.
+            </li>
+            <li>
+              Using <Link href="https://fresh.deno.dev/">fresh</Link>{" "}
+              as framework.
+            </li>
+            <li>
+              Emoji images are taken from{" "}
+              <Link href="https://twemoji.maxcdn.com/" />.
+            </li>
+            <li>
+              <Link href="https://github.com/ssssota/svg2png-wasm">
+                ssssota/svg2png-wasm
+              </Link>{" "}
+              is used to convert from svg to png.
+            </li>
+            <li>
+              <Link href="https://github.com/missive/emoji-mart">
+                missive/emoji-mart
+              </Link>{" "}
+              is used for the emoji picker.
+            </li>
+          </ul>
+          <h3 class={tw(h3Style)}>Sponsor</h3>
+          <p class={tw(pStyle)}>
+            Want to support this project? Support me via GitHub Sponsers!
+            <iframe
+              src="https://github.com/sponsors/ayame113/button"
+              title="Sponsor ayame113"
+              height="35"
+              width="116"
+              style="border: 0;"
+            >
+            </iframe>
+          </p>
         </div>
         <div class={tw(mainDivClass)}>
           <h2 class={tw(h2Style)}>License</h2>
