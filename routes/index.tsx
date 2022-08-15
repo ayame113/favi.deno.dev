@@ -18,6 +18,7 @@ const mainDivClass =
 const h2Style = apply`text-3xl text-center border-b-2 p-1`;
 const h3Style = apply`text-lg mt-4 mb-3 border-b-2 px-2 py-1`;
 const ulStyle = apply`list-disc p-2 pl-8`;
+const pStyle = "p-2";
 
 export default function Home() {
   return (
@@ -54,7 +55,7 @@ export default function Home() {
             {" fast favicon "}
             <img src="/🍒.png" alt="favicon" class={tw`inline w-8 h-8`} />
           </h2>
-          <p class={tw`p-2`}>
+          <p class={tw(pStyle)}>
             Don't want to worry about setting favicons? Tired of favicon
             generation and hosting? Wishes can come true.
           </p>
@@ -110,6 +111,18 @@ export default function Home() {
               is used for the emoji picker.
             </li>
           </ul>
+          <h3 class={tw(h3Style)}>Sponsor</h3>
+          <p class={tw(pStyle)}>
+            Want to support this project? Support me via GitHub Sponsers!
+            <iframe
+              src="https://github.com/sponsors/ayame113/button"
+              title="Sponsor ayame113"
+              height="35"
+              width="116"
+              style="border: 0;"
+            >
+            </iframe>
+          </p>
         </div>
         <div class={tw(mainDivClass)}>
           <h2 class={tw(h2Style)}>License</h2>

@@ -10,6 +10,7 @@ import { EmojiPicker } from "../components/EmojiPicker.tsx";
 import { Code } from "../components/Code.tsx";
 
 const h3Style = `text-lg mt-5 mb-3 mx-0! border-b-2 px-2 py-1`;
+const pStyle = "p-2";
 
 export default function Form() {
   const [targetChar, setTargetChar] = useState("🍌");
@@ -53,7 +54,7 @@ export default function Form() {
       <h3 class={tw(h3Style)}>
         1. Select the text you want for your favicon.
       </h3>
-      <p>
+      <p class={tw(pStyle)}>
         Type in the text box on the left or select from the emoji picker on the
         right.
       </p>
@@ -82,7 +83,7 @@ export default function Form() {
       <h3 class={tw(h3Style)}>
         2. Select Color
       </h3>
-      <p>
+      <p class={tw(pStyle)}>
         Choose your text color and background color so that it works in both
         light and dark modes.
       </p>
@@ -95,12 +96,14 @@ export default function Form() {
       <h3 class={tw(h3Style)}>
         3. Check the preview
       </h3>
-      <p>Check if the favicon is displayed as expected.</p>
+      <p class={tw(pStyle)}>Check if the favicon is displayed as expected.</p>
       <Preview faviconUrl={faviconUrl} />
       <h3 class={tw(h3Style)}>
         4. Copy the source code and paste it on your website!
       </h3>
-      <p>Add the favicon information in the html head tag and you're done.</p>
+      <p class={tw(pStyle)}>
+        Add the favicon information in the html head tag and you're done.
+      </p>
       <Code name="index.html" class={tw`my-4`}>{headTag}</Code>
       <Code name="manifest.json" class={tw`my-4`}>{manifestJson}</Code>
     </div>

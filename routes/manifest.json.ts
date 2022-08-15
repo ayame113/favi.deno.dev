@@ -23,6 +23,10 @@ export const handler: Handlers = {
       start_url: "/",
       theme_color: THEME_COLOR,
       background_color: THEME_COLOR,
+    }, {
+      headers: {
+        "cache-control": "public, max-age=31536000",
+      },
     });
   },
 };
