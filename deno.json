@@ -3,8 +3,8 @@
     "start": "deno run -A --watch=static/,routes/ dev.ts",
     "check": "deno check ./main.ts",
     "test": "deno test",
-    "test:coverage": "deno test --coverage",
-    "test:format": "deno fmt --check",
+    "test:coverage": "deno test --coverage=./coverage",
+    "test:fmt": "deno fmt --check",
     "test:lint": "deno lint"
   },
   "importMap": "./import_map.json"
