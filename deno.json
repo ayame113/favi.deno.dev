@@ -2,8 +2,8 @@
   "tasks": {
     "start": "deno run -A --watch=static/,routes/ dev.ts",
     "check": "deno check ./main.ts",
-    "test": "deno test",
-    "test:coverage": "deno test --coverage=./coverage",
+    "test": "deno test --allow-net --allow-read=.",
+    "test:coverage": "deno task test --coverage=./coverage",
     "test:fmt": "deno fmt --check",
     "test:lint": "deno lint"
   },
