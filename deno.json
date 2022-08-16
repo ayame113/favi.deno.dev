@@ -1,6 +1,11 @@
 {
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/ dev.ts"
+    "start": "deno run -A --watch=static/,routes/ dev.ts",
+    "check": "deno check ./main.ts",
+    "test": "deno test --allow-net --allow-read=.",
+    "test:coverage": "deno task test --coverage=./coverage",
+    "test:fmt": "deno fmt --check",
+    "test:lint": "deno lint"
   },
   "importMap": "./import_map.json"
 }
