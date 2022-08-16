@@ -1,5 +1,7 @@
 # favi.deno.dev
 
+[![codecov](https://codecov.io/gh/ayame113/favi.deno.dev/branch/main/graph/badge.svg?token=PGCarfD0tb)](https://codecov.io/gh/ayame113/favi.deno.dev)
+
 Source code for [favi.deno.dev](https://favi.deno.dev).
 
 API to provide images for favicons using emojis and characters.
