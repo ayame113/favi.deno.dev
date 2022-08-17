@@ -1,6 +1,7 @@
 import { initialize, svg2png } from "https://esm.sh/svg2png-wasm@1.3.4";
 
-const [, ...fonts] = await Promise.all([
+// NOTE: avoid TLA
+const initPromise = Promise.all([
   initialize(
     fetch("https://esm.sh/svg2png-wasm@1.3.4/svg2png_wasm_bg.wasm"),
   ),
@@ -11,8 +12,9 @@ const [, ...fonts] = await Promise.all([
 
 export const getTextSVG = (str: string, color: string) =>
   `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" dy="36%" style="text-anchor:middle;font-size:90px;" fill="${color}">${str}</text></svg>`;
-export const svgToPng = (svg: string, backgroundColor?: string) =>
-  svg2png(
+export const svgToPng = async (svg: string, backgroundColor?: string) => {
+  const [, ...fonts] = await initPromise;
+  return await svg2png(
     svg,
     {
       width: 512,
@@ -24,3 +26,4 @@ export const svgToPng = (svg: string, backgroundColor?: string) =>
       },
     },
   );
+};
