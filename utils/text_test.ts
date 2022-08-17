@@ -12,4 +12,6 @@ Deno.test({
       Deno.readFileSync(new URL(import.meta.resolve("./testdata/a.png"))),
     );
   },
+  sanitizeOps: false,
+  sanitizeResources: false,
 });
