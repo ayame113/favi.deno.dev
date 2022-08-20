@@ -24,6 +24,7 @@ export default function Home() {
   return (
     <body class={tw`min-h-screen flex flex-col`}>
       <Head>
+        <meta content="text/html; charset=UTF-8" name="Content-Type" />
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
         <meta name="theme-color" content={THEME_COLOR} />
