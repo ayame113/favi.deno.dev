@@ -31,7 +31,7 @@ export default function Home() {
         <meta property="og:title" content={TITLE} />
         <meta property="og:description" content={DESCRIPTION} />
         <meta property="og:url" content="https://favi.deno.dev" />
-        <meta property="og:image" content={FAVICON_URL} />
+        <meta property="og:image" content="/%F0%9F%8D%8C.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@_ayame113_" />
