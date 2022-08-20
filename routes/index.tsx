@@ -24,14 +24,13 @@ export default function Home() {
   return (
     <body class={tw`min-h-screen flex flex-col`}>
       <Head>
-        <meta content="text/html; charset=UTF-8" name="Content-Type" />
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
         <meta name="theme-color" content={THEME_COLOR} />
         <meta property="og:title" content={TITLE} />
         <meta property="og:description" content={DESCRIPTION} />
         <meta property="og:url" content="https://favi.deno.dev" />
-        <meta property="og:image" content="/%F0%9F%8D%8C.png" />
+        <meta property="og:image" content="https://favi.deno.dev/🍌.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@_ayame113_" />
