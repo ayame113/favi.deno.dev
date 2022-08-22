@@ -41,6 +41,12 @@ export default function Home() {
           if ('serviceWorker' in navigator)
           navigator.serviceWorker.register('{asset("/service_worker.js")}')
         </script>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5031282057357643"
+          crossOrigin="anonymous"
+        >
+        </script>
       </Head>
       <header class={tw`text-lg border-t-2 border-black p-1`}>
         <a href="/" class={tw`block`}>
