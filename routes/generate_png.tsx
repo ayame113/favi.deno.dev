@@ -1,6 +1,6 @@
 import { Handlers, RouteConfig } from "$fresh/server.ts";
 
-import { contentType } from "https://deno.land/std@0.152.0/media_types/mod.ts";
+import { contentType } from "https://deno.land/std@0.171.0/media_types/mod.ts";
 
 import { getEmojiSVG, isEmoji } from "../utils/twemoji.ts";
 import { getTextSVG, svgToPng } from "../utils/text.ts";
