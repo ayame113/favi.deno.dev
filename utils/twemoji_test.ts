@@ -32,7 +32,9 @@ Deno.test({
         mockFetchText,
       );
       assertSpyCall(fetchStub, 0, {
-        args: ["https://twemoji.maxcdn.com/v/latest/svg/1f995.svg"],
+        args: [
+          "https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f995.svg",
+        ],
       });
       assertSpyCalls(fetchStub, 1);
     } finally {

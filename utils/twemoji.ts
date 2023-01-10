@@ -7,5 +7,7 @@ export const isEmoji = (str: string) => (
 export const getEmojiSVG = async (str: string) =>
   (await fetch(getEmojiURL(str))).text();
 const getEmojiURL = (str: string) =>
-  `https://twemoji.maxcdn.com/v/latest/svg/${getCodePoint(str)}.svg`;
+  `https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/${
+    getCodePoint(str)
+  }.svg`;
 const getCodePoint = (str: string) => str.codePointAt(0)?.toString(16);
