@@ -17,6 +17,7 @@ export function Preview(props: PreviewProps) {
 }
 
 export function PreviewInner(props: PreviewProps & { img: string }) {
+  const url = new URL(props.faviconUrl);
   return (
     <div
       {...props}
@@ -29,7 +30,7 @@ export function PreviewInner(props: PreviewProps & { img: string }) {
         class={tw`absolute max-w-none h-full left-0 top-0`}
       />
       <img
-        src={props.faviconUrl}
+        src={url.pathname + url.search}
         alt="favicon"
         class={tw`absolute h-[17px] top-[11px] left-[28px]`}
       />

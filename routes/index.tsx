@@ -102,7 +102,7 @@ export default function Home() {
             </li>
             <li>
               Emoji images are taken from{" "}
-              <Link href="https://twemoji.maxcdn.com/" />.
+              <Link href="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/" />.
             </li>
             <li>
               <Link href="https://github.com/ssssota/svg2png-wasm">

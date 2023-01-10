@@ -16,7 +16,7 @@ API to provide images for favicons using emojis and characters.
 
 ```mermaid
 graph LR
-    A[Your Website] --> B[favi.deno.dev <br><br> Convert SVG to PNG] --> C["twemoji.maxcdn.com"]
+    A[Your Website] --> B[favi.deno.dev <br><br> Convert SVG to PNG] --> C["https://cdn.jsdelivr.net"]
     C --Get emoji SVG--> B --provide PNG favicon--> A
 ```
 

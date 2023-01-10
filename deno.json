@@ -7,5 +7,6 @@
     "test:fmt": "deno fmt --check",
     "test:lint": "deno lint"
   },
-  "importMap": "./import_map.json"
+  "importMap": "./import_map.json",
+  "lock": false
 }
