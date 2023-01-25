@@ -2,7 +2,7 @@
 import { h } from "preact";
 import { useEffect, useRef } from "preact/hooks";
 
-import { Picker as _Picker } from "https://esm.sh/emoji-mart@5.4.0/";
+import { Picker as _Picker } from "https://esm.sh/emoji-mart@5.5.2/";
 
 // deno-lint-ignore no-explicit-any
 const Picker: any = _Picker;
