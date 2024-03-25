@@ -1,6 +1,6 @@
 import { Handlers } from "$fresh/server.ts";
 
-import { contentType } from "https://deno.land/std@0.173.0/media_types/mod.ts";
+import { contentType } from "https://deno.land/std@0.220.1/media_types/mod.ts";
 
 export const handler: Handlers = {
   async GET() {
