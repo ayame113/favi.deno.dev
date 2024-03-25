@@ -1,9 +1,9 @@
-import { assertEquals } from "https://deno.land/std@0.173.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.220.1/testing/asserts.ts";
 import {
   assertSpyCall,
   assertSpyCalls,
   stub,
-} from "https://deno.land/std@0.173.0/testing/mock.ts";
+} from "https://deno.land/std@0.220.1/testing/mock.ts";
 
 import { getEmojiSVG, isEmoji } from "./twemoji.ts";
 
