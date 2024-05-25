@@ -1,9 +1,9 @@
-import { initialize, svg2png } from "https://esm.sh/svg2png-wasm@1.3.4";
+import { initialize, svg2png } from "https://esm.sh/svg2png-wasm@1.4.1/";
 
 // NOTE: avoid TLA
 const initPromise = Promise.all([
   initialize(
-    fetch("https://esm.sh/svg2png-wasm@1.3.4/svg2png_wasm_bg.wasm"),
+    fetch("https://esm.sh/svg2png-wasm@1.4.1//svg2png_wasm_bg.wasm"),
   ),
   Deno.readFile(
     new URL("./fonts/Noto_Sans_JP/NotoSansJP-Regular.otf", import.meta.url),
